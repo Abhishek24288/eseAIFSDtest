@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const CandidateContext = createContext();
 
-const API_BASE_URL = 'https://eseaifsdtest.onrender.com';
+const API_BASE_URL = 'https://eseaifsdtest.onrender.com/api';
 
 export const CandidateProvider = ({ children }) => {
   const [candidates, setCandidates] = useState([]);
