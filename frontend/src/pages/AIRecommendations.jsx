@@ -51,7 +51,7 @@ const AIRecommendations = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/ai/shortlist', {
+      const response = await axios.post('https://eseaifsdtest.onrender.com/api/ai/shortlist', {
         requiredSkills,
         preferredSkills,
         minExperience,
