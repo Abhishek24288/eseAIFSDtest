@@ -3,8 +3,8 @@ const Candidate = require('../models/Candidate');
 exports.addCandidate = async (req, res) => {
   try {
     const candidate = new Candidate(req.body);
-    await candidate.save();
-    res.status(201).json(candidate);
+    const savedCandidate = await candidate.save();
+    res.status(201).json(savedCandidate);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

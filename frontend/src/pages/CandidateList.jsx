@@ -12,9 +12,11 @@ const CandidateList = () => {
   const [selectedSkill, setSelectedSkill] = useState('');
 
   // Extract all unique skills across all candidates for filter drop down
+  // Extract all unique skills across all candidates for filter drop down safely
   const allSkills = Array.from(
-    new Set(candidates.flatMap(c => c.skills.map(s => s.trim())))
-  ).sort();
+    new Set(candidates.flatMap(c => (c.skills || []).map(s => s?.trim())))
+  ).filter(Boolean).sort();
+
 
   const handleResetFilters = () => {
     setSearch('');
